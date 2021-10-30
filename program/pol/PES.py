@@ -91,9 +91,9 @@ class PES(torch.nn.Module):
         output=self.nnmod2(density,species)
         varene=torch.sum(output)
         if (jab1 is not None) and (jab2 is not None):
-            jab1=jab1+cart
-            polar=torch.einsum("ij,ik -> jk",jab1,jab2)
+            polar=torch.einsum("ij,ik -> jk",cart,jab1)
             polar=polar+polar.permute(1,0)
+            polar=polar+torch.einsum("ij,ik -> jk",jab2,jab2)
             polar[0,0]=polar[0,0]+varene
             polar[1,1]=polar[1,1]+varene
             polar[2,2]=polar[2,2]+varene
