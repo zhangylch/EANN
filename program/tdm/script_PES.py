@@ -16,6 +16,7 @@ def jit_pes():
     scripted_pes=torch.jit.script(init_pes)
     for params in scripted_pes.parameters():
         params.requires_grad=False
+    scripted_pes.to(torch.double)
     scripted_pes.save("EANN_TDM_DOUBLE.pt")
     scripted_pes.to(torch.float32)
     scripted_pes.save("EANN_TDM_FLOAT.pt")
