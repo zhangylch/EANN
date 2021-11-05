@@ -82,4 +82,4 @@ class PES(torch.nn.Module):
         dipole=torch.einsum("ij,ik -> jk",output[:,0:2],cart)
         varene=torch.sum(output[:,2])
         tdm=dipole[0]+dipole[1]+varene*torch.cross(dipole[0],dipole[1])
-        return tdm.detach()
+        return tdm.detach(),

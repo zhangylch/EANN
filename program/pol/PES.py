@@ -97,5 +97,5 @@ class PES(torch.nn.Module):
             polar[0,0]=polar[0,0]+varene
             polar[1,1]=polar[1,1]+varene
             polar[2,2]=polar[2,2]+varene
-            return polar.detach()
+            return polar.detach(),
 

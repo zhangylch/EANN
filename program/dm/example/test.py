@@ -8,7 +8,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # same as the atomtype in the file input_density
 atomtype=['O', 'H', 'C', 'N']
 #load the serilizable model
-pes=torch.jit.load("EANN_DM_FLOAT.pt")
+pes=torch.jit.load("EANN_DM_DOUBLE.pt")
 # FLOAT: torch.float32; DOUBLE:torch.float32 for using float/float32 in inference
 pes.to(device).to(torch.float32)
 # set the eval mode
@@ -47,7 +47,7 @@ with open("/share/home/bjiangch/group-zyl/zyl/pytorch/2021_05_19/data/NMA/PDM-b3
         species=torch.from_numpy(np.array(species)).to(device)  # from numpy array to torch tensor
         cart=torch.from_numpy(np.array(cart)).to(device).to(torch.float32)  # also float32/double
         tcell=torch.from_numpy(cell).to(device).to(torch.float32)  # also float32/double
-        dipole=pes(period_table,cart,tcell,species,mass)
+        dipole,=pes(period_table,cart,tcell,species,mass)
         print("hello")
         print((dipole-abene).cpu().numpy())
         print(dipole.cpu().numpy())

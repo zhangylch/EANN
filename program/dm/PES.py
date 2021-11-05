@@ -80,4 +80,4 @@ class PES(torch.nn.Module):
         density=self.density(cart,neigh_list,shifts,species)
         output = self.nnmod(density,species)
         dipole=torch.einsum("i,ij -> j",output.view(-1),cart)
-        return dipole.detach()
+        return dipole.detach(),
