@@ -83,6 +83,6 @@ class PES(torch.nn.Module):
         density=self.density(cart,neigh_list,shifts,species)
         output = self.nnmod(density,species)+self.nnmod.initpot
         varene = torch.sum(output)
-        return varene.detach(),output.detach()
+        return varene.detach(),output.view(-1).detach()
         #grad = torch.autograd.grad([varene,],[cart,])[0]
         #if grad is not None:
