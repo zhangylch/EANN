@@ -79,10 +79,10 @@ class PES(torch.nn.Module):
     def forward(self,period_table,cart,cell,species,mass):
         cart=cart.detach().clone()
         neigh_list, shifts=self.neigh_list(period_table,cart,cell,mass)
-        cart.requires_grad_(True)
+        #cart.requires_grad_(True)
         density=self.density(cart,neigh_list,shifts,species)
         output = self.nnmod(density,species)+self.nnmod.initpot
         varene = torch.sum(output)
-        grad = torch.autograd.grad([varene,],[cart,])[0]
-        if grad is not None:
-            return varene.detach(),-grad.detach()
+        return varene.detach(),output.detach()
+        #grad = torch.autograd.grad([varene,],[cart,])[0]
+        #if grad is not None:
