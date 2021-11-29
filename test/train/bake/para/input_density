@@ -1,0 +1,5 @@
+neigh_atoms = 12
+cutoff= 6
+nipsin=2
+atomtype= ['O', 'H', 'C', 'N']
+nwave=12

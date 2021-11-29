@@ -1,0 +1,6 @@
+/opt/miniconda3/lib/python3.9/site-packages/torch/nn/modules/module.py:1102: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at  /opt/conda/conda-bld/pytorch_1634272107467/work/aten/src/ATen/native/TensorShape.cpp:2157.)
+  return forward_call(*input, **kwargs)
+Traceback (most recent call last):
+  File "/home/zhouyong/jiangb/test_iso/eval/./call_iso-NN.py", line 57, in <module>
+    var=pes(period_table,cart[i],tcell,species,tmass)
+IndexError: index 9992 is out of bounds for dimension 0 with size 9992

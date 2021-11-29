@@ -1,0 +1,39 @@
+[INFO] 2021-11-29 11:00:16,168 run: Running torch.distributed.run with args: ['/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-190/lib/python3.9/site-packages/torch/distributed/run.py', '--nproc_per_node=1', '--max_restarts=0', '--nnodes=1', '--rdzv_id=1503264.mgt', '--rdzv_backend=c10d', '--rdzv_endpoint=node4:1332', '/group/zyl/program/eann/program/']
+[INFO] 2021-11-29 11:00:16,212 run: Using nproc_per_node=1.
+[INFO] 2021-11-29 11:00:16,212 api: Starting elastic_operator with launch configs:
+  entrypoint       : /group/zyl/program/eann/program/
+  min_nodes        : 1
+  max_nodes        : 1
+  nproc_per_node   : 1
+  run_id           : 1503264.mgt
+  rdzv_backend     : c10d
+  rdzv_endpoint    : node4:1332
+  rdzv_configs     : {'timeout': 900}
+  max_restarts     : 0
+  monitor_interval : 5
+  log_dir          : None
+  metrics_cfg      : {}
+
+[INFO] 2021-11-29 11:00:16,226 c10d_rendezvous_backend: Process 2953 hosts the TCP store for the C10d rendezvous backend.
+[INFO] 2021-11-29 11:00:16,412 local_elastic_agent: log directory set to: /tmp/torchelastic_nwkgw0km/1503264.mgt_1ym09wfh
+[INFO] 2021-11-29 11:00:16,412 api: [default] starting workers for entrypoint: python3
+[INFO] 2021-11-29 11:00:16,412 api: [default] Rendezvous'ing worker group
+[INFO] 2021-11-29 11:00:16,412 dynamic_rendezvous: The node 'node4_2953_0' attempts to join the next round of the rendezvous '1503264.mgt'.
+[INFO] 2021-11-29 11:00:16,613 dynamic_rendezvous: The node 'node4_2953_0' has joined round 0 of the rendezvous '1503264.mgt' as rank 0 in a world of size 1.
+/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-190/lib/python3.9/site-packages/torch/distributed/elastic/utils/store.py:52: FutureWarning: This is an experimental API and will be changed in future.
+  warnings.warn(
+[INFO] 2021-11-29 11:00:16,625 api: [default] Rendezvous complete for workers. Result:
+  restart_count=0
+  master_addr=node4
+  master_port=60120
+  group_rank=0
+  group_world_size=1
+  local_ranks=[0]
+  role_ranks=[0]
+  global_ranks=[0]
+  role_world_sizes=[1]
+  global_world_sizes=[1]
+
+[INFO] 2021-11-29 11:00:16,625 api: [default] Starting worker group
+[INFO] 2021-11-29 11:00:16,626 __init__: Setting worker0 reply file to: /tmp/torchelastic_nwkgw0km/1503264.mgt_1ym09wfh/attempt_0/0/error.json
+sh: nvidia-smi: command not found

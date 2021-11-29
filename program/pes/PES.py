@@ -86,3 +86,4 @@ class PES(torch.nn.Module):
         return varene.detach(),output.view(-1).detach()
         #grad = torch.autograd.grad([varene,],[cart,])[0]
         #if grad is not None:
+            #return varene.detach(),-grad.detach()

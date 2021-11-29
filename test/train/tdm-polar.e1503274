@@ -1,0 +1,60 @@
+sh: nvidia-smi: command not found
+/group/zyl/program/eann/program/src/get_batchneigh.py:23: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at  /opt/conda/conda-bld/pytorch_1634272164809/work/aten/src/ATen/native/TensorShape.cpp:2157.)
+  tmpindex,tmpshifts,neigh=get_neighbour.neighbor_pairs\
+WARNING:torch.distributed.elastic.agent.server.api:Received 15 death signal, shutting down workers
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 26998 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 26998 closing signal SIGTERM
+ERROR:torch.distributed.elastic.multiprocessing.errors.error_handler:{
+  "message": {
+    "message": "SignalException: Process 26994 got signal: 15",
+    "extraInfo": {
+      "py_callstack": "Traceback (most recent call last):\n  File \"/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/elastic/agent/server/api.py\", line 709, in run\n    result = self._invoke_run(role)\n  File \"/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/elastic/agent/server/api.py\", line 843, in _invoke_run\n    time.sleep(monitor_interval)\n  File \"/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py\", line 60, in _terminate_process_handler\n    raise SignalException(f\"Process {os.getpid()} got signal: {sigval}\", sigval=sigval)\ntorch.distributed.elastic.multiprocessing.api.SignalException: Process 26994 got signal: 15\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py\", line 345, in wrapper\n    return f(*args, **kwargs)\n  File \"/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/run.py\", line 719, in main\n    run(args)\n  File \"/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/run.py\", line 710, in run\n    elastic_launch(\n  File \"/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/launcher/api.py\", line 131, in __call__\n    return launch_agent(self._config, self._entrypoint, list(args))\n  File \"/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/launcher/api.py\", line 252, in launch_agent\n    result = agent.run()\n  File \"/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/elastic/metrics/api.py\", line 125, in wrapper\n    result = f(*args, **kwargs)\n  File \"/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/elastic/agent/server/api.py\", line 716, in run\n    self._shutdown(e.sigval)\n  File \"/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/elastic/agent/server/local_elastic_agent.py\", line 190, in _shutdown\n    self._pcontext.close(death_sig)\n  File \"/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py\", line 330, in close\n    self._close(death_sig=death_sig, timeout=timeout)\n  File \"/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py\", line 720, in _close\n    handler.proc.wait(time_to_wait)\n  File \"/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/subprocess.py\", line 1189, in wait\n    return self._wait(timeout=timeout)\n  File \"/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/subprocess.py\", line 1911, in _wait\n    time.sleep(delay)\n  File \"/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py\", line 60, in _terminate_process_handler\n    raise SignalException(f\"Process {os.getpid()} got signal: {sigval}\", sigval=sigval)\ntorch.distributed.elastic.multiprocessing.api.SignalException: Process 26994 got signal: 15\n",
+      "timestamp": "1638155488"
+    }
+  }
+}
+Traceback (most recent call last):
+  File "/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/elastic/agent/server/api.py", line 709, in run
+    result = self._invoke_run(role)
+  File "/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/elastic/agent/server/api.py", line 843, in _invoke_run
+    time.sleep(monitor_interval)
+  File "/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 60, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 26994 got signal: 15
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/run.py", line 723, in <module>
+    main()
+  File "/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 345, in wrapper
+    return f(*args, **kwargs)
+  File "/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/run.py", line 719, in main
+    run(args)
+  File "/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/run.py", line 710, in run
+    elastic_launch(
+  File "/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 131, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 252, in launch_agent
+    result = agent.run()
+  File "/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/elastic/metrics/api.py", line 125, in wrapper
+    result = f(*args, **kwargs)
+  File "/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/elastic/agent/server/api.py", line 716, in run
+    self._shutdown(e.sigval)
+  File "/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/elastic/agent/server/local_elastic_agent.py", line 190, in _shutdown
+    self._pcontext.close(death_sig)
+  File "/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 330, in close
+    self._close(death_sig=death_sig, timeout=timeout)
+  File "/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 720, in _close
+    handler.proc.wait(time_to_wait)
+  File "/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/subprocess.py", line 1189, in wait
+    return self._wait(timeout=timeout)
+  File "/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/subprocess.py", line 1911, in _wait
+    time.sleep(delay)
+  File "/share/home/bjiangch/group-zyl/.conda/envs/PyTorch-1.10/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 60, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 26994 got signal: 15
